@@ -1,0 +1,5 @@
+Exercise 3 uses MPI_Reduce, a collective that sums all ranks counts in one call and returns the total to root. 
+MPI handles the contribution order internally, so the programmer doesn't manage it.
+
+Exercise 6 uses manual MPI_Send from non-root ranks and MPI_Recv with MPI_ANY_SOURCE on root. 
+Root accepts messages in arrival order rather than rank order, so the order is non-deterministic.

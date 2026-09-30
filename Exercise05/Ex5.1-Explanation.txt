@@ -1,0 +1,9 @@
+5.1 What happens in this situation?
+
+Rank 0 posts MPI_Send to rank 1
+Rank 1 posts MPI_Recv from rank 2, but rank 2 never sends
+Rank 2 does nothing
+
+This results in a deadlock. Rank 0's Send and rank 1's Recv never match
+So both blocked forever.
+The timeout kills the process after 10 seconds
